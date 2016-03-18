@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fOS-fn-tfJ" customClass="Canvas">
+                                <rect key="frame" x="0.0" y="82" width="414" height="654"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="thk-6A-TE8">
+                                <rect key="frame" x="0.0" y="35" width="414" height="29"/>
+                                <segments>
+                                    <segment title="Black"/>
+                                    <segment title="Red"/>
+                                    <segment title="Blue"/>
+                                    <segment title="Purple"/>
+                                    <segment title="Gray"/>
+                                </segments>
+                                <connections>
+                                    <action selector="colorPicked:" destination="BYZ-38-t0r" eventType="valueChanged" id="W5d-sL-5bv"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="thk-6A-TE8" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="15" id="JmW-EU-4oa"/>
+                            <constraint firstAttribute="trailing" secondItem="thk-6A-TE8" secondAttribute="trailing" id="RyY-Mg-zmd"/>
+                            <constraint firstItem="fOS-fn-tfJ" firstAttribute="top" secondItem="thk-6A-TE8" secondAttribute="bottom" constant="19" id="WEI-Ig-U9U"/>
+                            <constraint firstItem="thk-6A-TE8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="a8h-FS-UUK"/>
+                            <constraint firstAttribute="trailing" secondItem="fOS-fn-tfJ" secondAttribute="trailing" id="qrF-V7-I1c"/>
+                            <constraint firstItem="fOS-fn-tfJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ugx-Y1-czs"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="fOS-fn-tfJ" secondAttribute="bottom" id="wNM-ze-ylr"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="colorSegmentedControl" destination="thk-6A-TE8" id="ydZ-0s-KAt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="305" y="355"/>
+        </scene>
+    </scenes>
+</document>
