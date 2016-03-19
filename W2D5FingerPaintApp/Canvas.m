@@ -13,7 +13,7 @@
 @interface Canvas()
 @property (nonatomic,strong) NSMutableArray *lines;
 @property (nonatomic,strong) NSMutableArray *collectionOfPath;
-//@property (nonatomic,assign)
+@property (nonatomic,assign) BOOL erase;
 
 @end
 @implementation Canvas
@@ -65,11 +65,11 @@
   
   switch (self.mode) {
     case Draw:{
-      
+      self.erase = NO;
       break;
     }
     case Erase:
-      
+      self.erase = YES;
       break;
       
     default:
@@ -96,6 +96,7 @@
       [bezeirPath2 addLineToPoint:line.Location];
     }
     [bezeirPath2 strokeWithBlendMode:kCGBlendModeNormal alpha:1.0];
+
   }
   //Stroke current line drawn
   UIBezierPath *bezeirPath = [UIBezierPath bezierPath];
@@ -108,9 +109,9 @@
     [bezeirPath moveToPoint:line.previousLocation];
     [bezeirPath addLineToPoint:line.Location];
   }
-  [bezeirPath strokeWithBlendMode:kCGBlendModeNormal alpha:1.0];
-  //[myPath strokeWithBlendMode:_erase?kCGBlendModeClear:kCGBlendModeNormal alpha:1.0f];
-}
+  //[bezeirPath strokeWithBlendMode:kCGBlendModeNormal alpha:1.0];
+  [bezeirPath strokeWithBlendMode:self.erase?kCGBlendModeClear:kCGBlendModeNormal alpha:1.0f];
+  }
 
 
 
