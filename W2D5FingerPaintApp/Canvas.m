@@ -104,13 +104,17 @@
   bezeirPath.lineWidth = 10;
   
   for (Line *line in self.lines) {
-    [line.color set];
+    if (!self.erase){
+      [line.color set];
+    } else{
+      [self.backgroundColor set];
+    }
     bezeirPath.miterLimit=-20;
     [bezeirPath moveToPoint:line.previousLocation];
     [bezeirPath addLineToPoint:line.Location];
   }
-  //[bezeirPath strokeWithBlendMode:kCGBlendModeNormal alpha:1.0];
-  [bezeirPath strokeWithBlendMode:self.erase?kCGBlendModeClear:kCGBlendModeNormal alpha:1.0f];
+  [bezeirPath strokeWithBlendMode:kCGBlendModeNormal alpha:1.0];
+  //[bezeirPath strokeWithBlendMode:self.erase?kCGBlendModeClear:kCGBlendModeNormal alpha:1.0f];
   }
 
 
