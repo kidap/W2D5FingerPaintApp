@@ -8,6 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+typedef enum{
+  Draw,
+  Erase
+} CanvasDrawMode;
+
 @interface Canvas : UIView
 @property (nonatomic,strong) UIColor *color;
+@property (nonatomic,assign) CanvasDrawMode mode;
+
+
+-(void)newCanvas;
 @end

@@ -18,8 +18,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l8w-Gx-aZL">
+                                <rect key="frame" x="333" y="28" width="61" height="30"/>
+                                <state key="normal" title="Add Text"/>
+                                <connections>
+                                    <action selector="addTextField:" destination="BYZ-38-t0r" eventType="touchUpInside" id="H3g-RM-JEN"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fOS-fn-tfJ" customClass="Canvas">
+                                <rect key="frame" x="0.0" y="109" width="414" height="627"/>
+                                <color key="backgroundColor" red="0.94095863833149751" green="1" blue="0.96480905361860891" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="OOJ-gZ-xis">
+                                <rect key="frame" x="159" y="28" width="97" height="29"/>
+                                <segments>
+                                    <segment title="Draw"/>
+                                    <segment title="Erase"/>
+                                </segments>
+                                <connections>
+                                    <action selector="modeSelected:" destination="BYZ-38-t0r" eventType="valueChanged" id="obX-QY-FTV"/>
+                                </connections>
+                            </segmentedControl>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="thk-6A-TE8">
-                                <rect key="frame" x="0.0" y="35" width="414" height="29"/>
+                                <rect key="frame" x="20" y="73" width="374" height="29"/>
                                 <segments>
                                     <segment title="Black"/>
                                     <segment title="Red"/>
@@ -31,36 +52,36 @@
                                     <action selector="colorPicked:" destination="BYZ-38-t0r" eventType="valueChanged" id="W5d-sL-5bv"/>
                                 </connections>
                             </segmentedControl>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fOS-fn-tfJ" customClass="Canvas">
-                                <rect key="frame" x="0.0" y="107" width="414" height="629"/>
-                                <color key="backgroundColor" red="0.94095863833149751" green="1" blue="0.96480905361860891" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l8w-Gx-aZL">
-                                <rect key="frame" x="177" y="71" width="61" height="30"/>
-                                <state key="normal" title="Add Text"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AJd-ru-Z8Y">
+                                <rect key="frame" x="20" y="28" width="85" height="30"/>
+                                <state key="normal" title="New Canvas"/>
                                 <connections>
-                                    <action selector="addTextField:" destination="BYZ-38-t0r" eventType="touchUpInside" id="H3g-RM-JEN"/>
+                                    <action selector="newCanvasButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hgk-MY-oNH"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="thk-6A-TE8" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="15" id="JmW-EU-4oa"/>
-                            <constraint firstAttribute="trailing" secondItem="thk-6A-TE8" secondAttribute="trailing" id="RyY-Mg-zmd"/>
-                            <constraint firstItem="l8w-Gx-aZL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="157" id="ZnH-19-smY"/>
-                            <constraint firstItem="thk-6A-TE8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="a8h-FS-UUK"/>
-                            <constraint firstItem="fOS-fn-tfJ" firstAttribute="top" secondItem="l8w-Gx-aZL" secondAttribute="bottom" constant="6" id="oMn-C1-Ciy"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="l8w-Gx-aZL" secondAttribute="trailing" constant="156" id="omo-ab-aBA"/>
+                            <constraint firstItem="OOJ-gZ-xis" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="56I-wG-PDy"/>
+                            <constraint firstItem="fOS-fn-tfJ" firstAttribute="top" secondItem="thk-6A-TE8" secondAttribute="bottom" constant="8" id="DjH-bU-7jk"/>
+                            <constraint firstAttribute="trailing" secondItem="thk-6A-TE8" secondAttribute="trailing" constant="20" id="GlL-9A-xYW"/>
+                            <constraint firstItem="OOJ-gZ-xis" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NMN-RC-tKL"/>
+                            <constraint firstItem="AJd-ru-Z8Y" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="TFK-xV-o71"/>
+                            <constraint firstItem="thk-6A-TE8" firstAttribute="top" secondItem="AJd-ru-Z8Y" secondAttribute="bottom" constant="15" id="XN3-Xl-i8v"/>
+                            <constraint firstItem="l8w-Gx-aZL" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="ZOb-tx-ZT3"/>
+                            <constraint firstItem="AJd-ru-Z8Y" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="a62-5F-kLP"/>
+                            <constraint firstItem="l8w-Gx-aZL" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="amF-lm-o24"/>
+                            <constraint firstItem="thk-6A-TE8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="lJI-vX-HUe"/>
                             <constraint firstAttribute="trailing" secondItem="fOS-fn-tfJ" secondAttribute="trailing" id="qrF-V7-I1c"/>
                             <constraint firstItem="fOS-fn-tfJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ugx-Y1-czs"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="fOS-fn-tfJ" secondAttribute="bottom" id="wNM-ze-ylr"/>
-                            <constraint firstItem="l8w-Gx-aZL" firstAttribute="top" secondItem="thk-6A-TE8" secondAttribute="bottom" constant="8" id="zkd-7G-DG6"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
                         <outlet property="canvasView" destination="fOS-fn-tfJ" id="4dj-eJ-mST"/>
                         <outlet property="colorSegmentedControl" destination="thk-6A-TE8" id="ydZ-0s-KAt"/>
+                        <outlet property="modeSegmentedControl" destination="OOJ-gZ-xis" id="eNh-b6-ke0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

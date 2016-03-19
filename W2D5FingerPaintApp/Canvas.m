@@ -13,6 +13,7 @@
 @interface Canvas()
 @property (nonatomic,strong) NSMutableArray *lines;
 @property (nonatomic,strong) NSMutableArray *collectionOfPath;
+//@property (nonatomic,assign)
 
 @end
 @implementation Canvas
@@ -27,6 +28,13 @@
     _collectionOfPath = [[NSMutableArray alloc] init];
   }
   return self;
+}
+
+//MARK:Public methods
+-(void)newCanvas{
+  self.collectionOfPath = [[NSMutableArray alloc] init];
+  self.lines = [[NSMutableArray alloc] init];
+  [self setNeedsDisplay];
 }
 
 //MARK: Touches
@@ -54,6 +62,20 @@
                                   withLocation:[touch locationInView:self]
                                   withPrevious:[touch previousLocationInView:self]];
   [self.lines addObject:line];
+  
+  switch (self.mode) {
+    case Draw:{
+      
+      break;
+    }
+    case Erase:
+      
+      break;
+      
+    default:
+      break;
+  }
+  
   [self setNeedsDisplay];
   
 }
@@ -75,7 +97,6 @@
     }
     [bezeirPath2 strokeWithBlendMode:kCGBlendModeNormal alpha:1.0];
   }
-
   //Stroke current line drawn
   UIBezierPath *bezeirPath = [UIBezierPath bezierPath];
   bezeirPath.lineCapStyle = kCGLineCapRound;
@@ -88,8 +109,7 @@
     [bezeirPath addLineToPoint:line.Location];
   }
   [bezeirPath strokeWithBlendMode:kCGBlendModeNormal alpha:1.0];
-  
-  
+  //[myPath strokeWithBlendMode:_erase?kCGBlendModeClear:kCGBlendModeNormal alpha:1.0f];
 }
 
 
