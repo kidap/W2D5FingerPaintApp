@@ -104,11 +104,12 @@
   bezeirPath.lineWidth = 10;
   
   for (Line *line in self.lines) {
-    if (!self.erase){
-      [line.color set];
-    } else{
+    if (self.erase){
+      line.color = self.backgroundColor;
       [self.backgroundColor set];
     }
+    
+    [line.color set];
     bezeirPath.miterLimit=-20;
     [bezeirPath moveToPoint:line.previousLocation];
     [bezeirPath addLineToPoint:line.Location];
