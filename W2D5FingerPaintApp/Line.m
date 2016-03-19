@@ -20,11 +20,13 @@
 
 -(instancetype)initLineWithColor:(UIColor *) color
              withLocation:(CGPoint)location
-             withPrevious:(CGPoint)previousLocation{
+                    withPrevious:(CGPoint)previousLocation{
+             //withVelocity:(CGPoint)velocity{
     if (self = [super init]) {
       _previousLocation = previousLocation;
       _Location = location;
       _color = color;
+      //_velocity = velocity;
     }
     return self;
 }

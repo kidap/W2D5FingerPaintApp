@@ -17,16 +17,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   // Override point for customization after application launch.
-
-  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(setColor:) name:@"colorSelected" object:self.color];
-  //self.color = [[UIColor alloc] init];
   
+
   return YES;
-}
-
--(void)setColor:(NSNotification *)notification{
-  //self.color = notification.object;
-  
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

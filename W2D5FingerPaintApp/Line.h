@@ -12,9 +12,11 @@
 
 @property (nonatomic,assign) CGPoint previousLocation;
 @property (nonatomic,assign) CGPoint Location;
+@property (nonatomic,assign) CGPoint velocity;
 @property (nonatomic,strong) UIColor *color;
 
 -(instancetype) initLineWithColor:(UIColor *) color
                      withLocation:(CGPoint)location
                      withPrevious:(CGPoint)previousLocation;
+                     //withVelocity:(CGPoint)velocity;
 @end

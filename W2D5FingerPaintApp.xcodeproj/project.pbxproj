@@ -68,15 +68,15 @@
 				A7F4FB501C9C7EA8003E5E4F /* AppDelegate.m */,
 				A7F4FB521C9C7EA8003E5E4F /* ViewController.h */,
 				A7F4FB531C9C7EA8003E5E4F /* ViewController.m */,
+				A7F4FB631C9C8684003E5E4F /* Canvas.h */,
+				A7F4FB641C9C8684003E5E4F /* Canvas.m */,
+				A7F4FB661C9C870D003E5E4F /* Line.h */,
+				A7F4FB671C9C870D003E5E4F /* Line.m */,
 				A7F4FB551C9C7EA8003E5E4F /* Main.storyboard */,
 				A7F4FB581C9C7EA8003E5E4F /* Assets.xcassets */,
 				A7F4FB5A1C9C7EA8003E5E4F /* LaunchScreen.storyboard */,
 				A7F4FB5D1C9C7EA8003E5E4F /* Info.plist */,
 				A7F4FB4C1C9C7EA8003E5E4F /* Supporting Files */,
-				A7F4FB631C9C8684003E5E4F /* Canvas.h */,
-				A7F4FB641C9C8684003E5E4F /* Canvas.m */,
-				A7F4FB661C9C870D003E5E4F /* Line.h */,
-				A7F4FB671C9C870D003E5E4F /* Line.m */,
 			);
 			path = W2D5FingerPaintApp;
 			sourceTree = "<group>";
@@ -313,6 +313,7 @@
 				A7F4FB621C9C7EA8003E5E4F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
