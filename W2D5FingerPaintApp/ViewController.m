@@ -8,12 +8,20 @@
 
 #import "ViewController.h"
 #import "Canvas.h"
+#import "ColorButton.h"
 
 @interface ViewController ()<UITextFieldDelegate>
 @property (strong, nonatomic) IBOutlet UISegmentedControl *colorSegmentedControl;
 @property (strong, nonatomic) IBOutlet Canvas *canvasView;
 @property (strong, nonatomic) IBOutlet UISegmentedControl *modeSegmentedControl;
 @property (strong, nonatomic) NSMutableSet *textFieldsOnScreen;
+@property (weak, nonatomic) IBOutlet ColorButton *blackButton;
+@property (weak, nonatomic) IBOutlet ColorButton *redButton;
+@property (weak, nonatomic) IBOutlet ColorButton *blueButton;
+@property (weak, nonatomic) IBOutlet ColorButton *purpleButton;
+@property (weak, nonatomic) IBOutlet ColorButton *greyButton;
+@property (weak, nonatomic) IBOutlet UIView *yellowButton;
+@property (strong, nonatomic) ColorButton *currentSelectedColor;
 
 @end
 
@@ -34,6 +42,29 @@
 //MARK:Prepare View
 -(void)prepareView{
   self.textFieldsOnScreen = [[NSMutableSet alloc] init];
+  
+  UITapGestureRecognizer *blackButtonTapped = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(colorButtonTapped:)];
+  [self.blackButton addGestureRecognizer:blackButtonTapped];
+  
+  UITapGestureRecognizer *redButtonTapped = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(colorButtonTapped:)];
+  [self.redButton addGestureRecognizer:redButtonTapped];
+  
+  
+  UITapGestureRecognizer *blueButtonTapped = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(colorButtonTapped:)];
+  [self.blueButton addGestureRecognizer:blueButtonTapped];
+  
+  
+  UITapGestureRecognizer *purpleButtonTapped = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(colorButtonTapped:)];
+  [self.purpleButton addGestureRecognizer:purpleButtonTapped];
+  
+  
+  UITapGestureRecognizer *greyButtonTapped = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(colorButtonTapped:)];
+  [self.greyButton addGestureRecognizer:greyButtonTapped];
+  
+  
+  UITapGestureRecognizer *yellowButtonTapped = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(colorButtonTapped:)];
+  [self.yellowButton addGestureRecognizer:yellowButtonTapped];
+  
 }
 
 //MARK:IBActions
@@ -58,6 +89,7 @@
   [textField1 setBorderStyle:UITextBorderStyleNone];
   [textField1 setText:@"Text"];
   [textField1 invalidateIntrinsicContentSize];
+  [textField1 sizeToFit];
   [textField1 setTextColor:self.canvasView.color];
   textField1.delegate = self;
   
@@ -66,7 +98,10 @@
   
   UIPanGestureRecognizer *panTextField = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panTextAdded:)];
   [textField1 addGestureRecognizer:panTextField];
+
 }
+
+
 //MARK: Gestures
 -(void)panTextAdded:(UIPanGestureRecognizer *)recognizer{
   switch (recognizer.state) {
@@ -80,11 +115,31 @@
       break;
   }
 }
+
+-(void) colorButtonTapped:(UITapGestureRecognizer *)recognizer{
+  //Deselect last button pressed
+  [self.currentSelectedColor onSelect];
+  
+  //Get current color selected
+  ColorButton *colorSelected = (ColorButton *) recognizer.view;
+  [colorSelected onSelect];
+  self.canvasView.color = colorSelected.backgroundColor;
+  
+  //Set current color selected
+  self.currentSelectedColor = colorSelected;
+}
+
 //MARK: Textfield delegate
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{
+  [textField sizeToFit];
   [textField resignFirstResponder];
   return YES;
 }
+-(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
+  [textField sizeToFit];
+  return YES;
+}
+
 //MARK: Help methods
 
 -(void) setColorFromSegmentedControl:(UISegmentedControl *)segmentControl{

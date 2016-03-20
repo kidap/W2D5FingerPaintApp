@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A7D4720F1C9F45C300F15F1F /* ColorButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D4720E1C9F45C300F15F1F /* ColorButton.m */; };
 		A7F4FB4E1C9C7EA8003E5E4F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A7F4FB4D1C9C7EA8003E5E4F /* main.m */; };
 		A7F4FB511C9C7EA8003E5E4F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A7F4FB501C9C7EA8003E5E4F /* AppDelegate.m */; };
 		A7F4FB541C9C7EA8003E5E4F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7F4FB531C9C7EA8003E5E4F /* ViewController.m */; };
@@ -18,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A7D4720D1C9F45C300F15F1F /* ColorButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorButton.h; sourceTree = "<group>"; };
+		A7D4720E1C9F45C300F15F1F /* ColorButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorButton.m; sourceTree = "<group>"; };
 		A7F4FB491C9C7EA8003E5E4F /* W2D5FingerPaintApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = W2D5FingerPaintApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7F4FB4D1C9C7EA8003E5E4F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A7F4FB4F1C9C7EA8003E5E4F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -72,6 +75,8 @@
 				A7F4FB641C9C8684003E5E4F /* Canvas.m */,
 				A7F4FB661C9C870D003E5E4F /* Line.h */,
 				A7F4FB671C9C870D003E5E4F /* Line.m */,
+				A7D4720D1C9F45C300F15F1F /* ColorButton.h */,
+				A7D4720E1C9F45C300F15F1F /* ColorButton.m */,
 				A7F4FB551C9C7EA8003E5E4F /* Main.storyboard */,
 				A7F4FB581C9C7EA8003E5E4F /* Assets.xcassets */,
 				A7F4FB5A1C9C7EA8003E5E4F /* LaunchScreen.storyboard */,
@@ -161,6 +166,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7F4FB681C9C870D003E5E4F /* Line.m in Sources */,
+				A7D4720F1C9F45C300F15F1F /* ColorButton.m in Sources */,
 				A7F4FB541C9C7EA8003E5E4F /* ViewController.m in Sources */,
 				A7F4FB511C9C7EA8003E5E4F /* AppDelegate.m in Sources */,
 				A7F4FB4E1C9C7EA8003E5E4F /* main.m in Sources */,
