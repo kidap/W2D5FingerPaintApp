@@ -52,6 +52,7 @@
 -(void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
   [self.collectionOfPath addObject:[self.lines copy]];
   [self.lines removeAllObjects];
+  [self setNeedsDisplay];//forcing to commit erase
 }
 
 //MARK: Line
@@ -114,8 +115,8 @@
     [bezeirPath moveToPoint:line.previousLocation];
     [bezeirPath addLineToPoint:line.Location];
   }
-  [bezeirPath strokeWithBlendMode:kCGBlendModeNormal alpha:1.0];
-  //[bezeirPath strokeWithBlendMode:self.erase?kCGBlendModeClear:kCGBlendModeNormal alpha:1.0f];
+  //[bezeirPath strokeWithBlendMode:kCGBlendModeNormal alpha:1.0];
+  [bezeirPath strokeWithBlendMode:self.erase?kCGBlendModeClear:kCGBlendModeNormal alpha:1.0f];
   }
 
 
